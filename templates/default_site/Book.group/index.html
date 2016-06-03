@@ -1,12 +1,7 @@
-{embed="Assets/header"}
+{embed="assets/header"}
 <div id="pagecontainer" class="book">
-				<div id="pagenav" class="book">
-					<ul>
-						<li><a href="{path='site_index'}Hear">{if segment_1 == "Hear"}<span class="yelital">Hear </span>{if:else}Hear {/if}</a></li>
-						<li><a href="{path='site_index'}Blog">{if segment_1 == "Blog"}<span class="yelital">Blog </span>{if:else}Blog {/if}</a></li>
-						<li><a href="{path='site_index'}Book">{if segment_1 == "Book"}<span class="yelital">Book </span>{if:else}Book {/if}</a></li>
-					</ul>
-				</div>
+	
+	{embed="assets/pagenav" class="book"}
 				
 	{exp:email:contact_form user_recipients="false" replyto="yes" recipients="rickseals@msn.com" charset="utf-8"}
 	<div id="pagecontent">
@@ -37,7 +32,7 @@
 	<div id="sidebar" class="book">
 		<h2>Blog Entries</h2>
 		{exp:channel:entries channel="blog" sort="dsc" limit="5"}
-		<a href="Blog/{entry_id}">
+		<a href="{path='blog/{entry_id}'}">
 		<div id="blogsidebarentry">
 			<h3>{title}</h3>
 			<p>{entry_date format="%D, %F %j%S, %Y"}</p>
@@ -47,4 +42,4 @@
 	</div>
 
 </div><!-- BOOK CLOSE -->
-{embed="Assets/footer"}
+{embed="assets/footer"}

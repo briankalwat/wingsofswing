@@ -1,13 +1,8 @@
-{embed="Assets/header"}
+{embed="assets/header"}
 
 <div id="pagecontainer" class="hear">
-	<div id="pagenav">
-		<ul>
-			<li><a href="{path='site_index'}Hear">{if segment_1 == "Hear"}<span class="yelital">Hear </span>{if:else}Hear {/if}</a></li>
-			<li><a href="{path='site_index'}Blog">{if segment_1 == "Blog"}<span class="yelital">Blog </span>{if:else}Blog {/if}</a></li>
-			<li><a href="{path='site_index'}Book">{if segment_1 == "Book"}<span class="yelital">Book </span>{if:else}Book {/if}</a></li>
-		</ul>
-	</div>
+	
+	{embed="assets/pagenav" class="hear"}
 
 	<div id="pagecontent">
 		{exp:channel:entries channel="pages" entry_id="7"}
@@ -47,4 +42,4 @@
 	
 </div><!-- PAGE CONTAINER CLOSE -->
 
-{embed="Assets/footer"}
+{embed="assets/footer"}

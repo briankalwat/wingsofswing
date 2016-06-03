@@ -1,11 +1,7 @@
-# BEGIN ExpressionEngine Rewrite
-<IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
+
+RewriteCond $1 !\.(gif|jpe?g|png)$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond $1 !\.(gif|jpe?g|png)$ [NC]
-RewriteRule ^(.*)$ /index.php?$1 [L]
-</IfModule>
-# END ExpressionEngine Rewrite 
-AddHandler php4-script .php
+RewriteRule ^(.*)$ /index.php/$1 [L]

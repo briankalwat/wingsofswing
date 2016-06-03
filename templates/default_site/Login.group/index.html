@@ -1,48 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<html>
-	<head>
-		<title>
-		The Wings of Swing Big Band
-		{if segment_1 == "Login"}// Login{/if}
-		{if segment_1 == "Hear"}// Hear the Band{/if}
-		{if segment_1 == "Blog"}// Join the Community{/if}
-		{if segment_1 == "Book"}// Book an Event{/if}
-		{if segment_1 == "Feedback"}// Client Comments{/if}
-		</title>
-		<meta name="description" content="Serving Springfield, MO and the surrounding area."/>
-		<link rel="stylesheet" rev="stylesheet" href="http://www.wingsofswing.com/Assets/style" />
-		<script type="text/javascript" src="/jquery-1.2.6.min.js"></script>
-		<script type="text/javascript" src="/jquery.cycle.min.js"></script>
-		<script language="JavaScript" src="http://www.wingsofswing.com/uploads/songs/audio-player.js"></script>
-		
-		<script type="text/javascript">
-        $(document).ready(function(){
-	$('#cc').cycle({ 
-        fx:    'fade', 
-        timeout: 6000,
-        speed:  500,
-        prev:    '#prev',
-        next:    '#next'
-        });
-        });
-        </script>
-		
-	</head>
-	<body>
-		<div id="container">
-			<div id="loginbar">
-				<a href="{path='login/index'}"><div id="loginbutton"></div></a>
-			</div>
-			<a href="http://www.wingsofswing.com">
-			<div id="header">
-				<h1>The Wings of Swing Big Band</h1>
-				<p>Serving <span class="yelital">Springfield, MO</span> and the surrounding area.</p>
-			</div>
-			</a>
-			
-<!-- BEGIN LOGIN TEMPLATE -->
+{embed="assets/header"}
 
 {exp:member:login_form return="system"}
 <div id="formcontainer">
@@ -59,12 +15,4 @@
 
 {/exp:member:login_form}
 
-<!-- END LOGIN TEMPLATE -->
-
-		</div>
-		<div id="footercontainer">
-			<div id="footer">&copy; {current_time format="%Y"} Wings of Swing Big Band &nbsp;|&nbsp; Powered By: <a href="http://www.expressionengine.com" target="_blank">ExpressionEngine 2.0</a> &nbsp;|&nbsp; Site Design: <a href="http://www.facebook.com/pages/Brian-Kalwat/302512858327" target="_blank">Brian Kalwat</a> &nbsp;|&nbsp; Contact: (555) 555-5555 <span class="yelital">or</span> rick <span class="yelital">[at]</span> wingsofswing <span class="yelital">[dot]</span> com
-</div>
-		</div>
-	</body>
-</html>
+{embed="assets/footer"}

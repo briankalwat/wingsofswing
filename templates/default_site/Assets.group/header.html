@@ -1,15 +1,13 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>
 		The Wings of Swing Big Band
-		{if segment_1 == "Login"}// Login{/if}
-		{if segment_1 == "Hear"}// Hear the Band{/if}
-		{if segment_1 == "Blog"}// Join the Community{/if}
-		{if segment_1 == "Book"}// Book an Event{/if}
-		{if segment_1 == "Feedback"}// Client Comments{/if}
+		{if segment_1 == "login"}// Login{/if}
+		{if segment_1 == "hear"}// Hear the Band{/if}
+		{if segment_1 == "blog"}// Join the Community{/if}
+		{if segment_1 == "book"}// Book an Event{/if}
+		{if segment_1 == "feedback"}// Client Comments{/if}
 		</title>
 		<meta name="robots" content="index, follow" />
 		<meta name="description" content="The Wings of Swing is a local big band that is available for gigs in Springfield, MO and the surrounding area."/>
@@ -17,20 +15,20 @@
 		<meta name="author" content="Brian Kalwat" />
 		<meta name="google-site-verification" content="B7VAAiyiWpkffvBXBH5pDLAapgIJAfSQ9N3tlkcu7vo" />
 
-		<link rel="stylesheet" rev="stylesheet" href="{path='site_index'}Assets/style" />
+		<link rel="stylesheet" rev="stylesheet" href="{path='site_index'}assets/style" />
 		<script type="text/javascript" src="/jquery-1.2.6.min.js"></script>
 		<script type="text/javascript" src="/jquery.cycle.min.js"></script>
 		<script language="JavaScript" src="http://www.wingsofswing.com/uploads/songs/audio-player.js"></script>
 		
 		<script type="text/javascript">
         $(document).ready(function(){
-	$('#cc').cycle({ 
-        fx:    'fade', 
-        timeout: 6000,
-        speed:  500,
-        prev:    '#prev',
-        next:    '#next'
-        });
+			$('#cc').cycle({ 
+		        fx:    'fade', 
+		        timeout: 6000,
+		        speed:  500,
+		        prev:    '#prev',
+		        next:    '#next'
+		    });
         });
         </script>
 		
@@ -39,14 +37,14 @@
 		<div id="container">
 		
 			<div id="loginbar">
-				{if logged_in}<a href="{path='site_index'}system"><div id="loginbutton"></div></a>
-				{if:else}<a href="{path='site_index'}Login"><div id="loginbutton"></div></a>
+				{if logged_in}<a href="{path='system'}"><div id="loginbutton"></div></a>
+				{if:else}<a href="{path='login'}"><div id="loginbutton"></div></a>
 				{/if}
-			</div><!-- LOGIN BAR CLOSE -->
+			</div>
 			
-			<a href="http://www.wingsofswing.com">
-			<div id="header">
-				<h1>The Wings of Swing Big Band</h1>
-				<p>Serving <span class="yelital">Springfield, MO</span> and the surrounding area.</p>
-			</div><!-- HEADER CLOSE -->
+			<a href="/">
+				<div id="header">
+					<h1>The Wings of Swing Big Band</h1>
+					<p>Serving <span class="yelital">Springfield, MO</span> and the surrounding area.</p>
+				</div>
 			</a>
