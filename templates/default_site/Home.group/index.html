@@ -1,0 +1,21 @@
+{embed="Assets/header"}
+
+			<div id="mainnav">
+				<a href="{path='site_index'}Hear"><div id="nav1"></div></a>
+				<a href="{path='site_index'}Blog"><div id="nav2"></div></a>
+				<a href="{path='site_index'}Book"><div id="nav3"></div></a>
+			</div>
+			<div id="clientcomments">
+				<div id="fromourclients">
+					From Our Clients:
+				</div>
+				<a href="{path='site_index'}Feedback"><div id="readmore">
+				</div></a>
+				<div id="cc">
+					{exp:channel:entries channel="clientcomments"}
+					<a href="{path='site_index'}Feedback">"{clientcomment}" &nbsp;&nbsp;&nbsp;</a>
+					{/exp:channel:entries}
+				</div>
+			</div>
+		
+{embed="Assets/footer"}

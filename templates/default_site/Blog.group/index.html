@@ -1,0 +1,60 @@
+{embed="Assets/header"}
+
+<div id="pagecontainer" class="blog">
+	<div id="pagenav" class="blog">
+		<ul>
+			<li><a href="{path='site_index'}Hear">{if segment_1 == "Hear"}<span class="yelital">Hear </span>{if:else}Hear {/if}</a></li>
+			<li><a href="{path='site_index'}Blog">{if segment_1 == "Blog"}<span class="yelital">Blog </span>{if:else}Blog {/if}</a></li>
+			<li><a href="{path='site_index'}Book">{if segment_1 == "Book"}<span class="yelital">Book </span>{if:else}Book {/if}</a></li>
+		</ul>
+	</div><!-- PAGENAV CLOSE -->
+	
+	<div id="pagecontent">
+		{if segment_2}<a href="{path="Blog/index"}">&#60;&#60; Return to main the Blog.</a><br/><br/>{if:else}{/if}
+		{exp:channel:entries channel="blog" limit="1" paginate="bottom"}
+		<div id="blogentrycontainer">
+			<h2>{title}</h2>
+			<p>{entry_date format="%D, %F %j%S, %Y"}</p><br />
+			<p>{blogentry}</p>
+		</div><!-- BLOG ENTRY CONTAINER CLOSE -->
+		
+		{if segment_2}<a href="{path="Blog/index"}">&#60;&#60; Return to main the Blog.</a>{if:else}{/if}
+		
+		<div id="blogpagination">
+			{paginate}
+			{if "{total_pages}" != 1}<p>Page {current_page} of {total_pages} pages {pagination_links}</p>{/if}
+			{/paginate}
+		</div><!-- BLOG PAGINATION CLOSE -->
+		
+		{/exp:channel:entries}
+		
+	</div><!-- BLOG CONTENT CLOSE -->
+	
+	<div id="sidebar" class="blog">
+		<h2>Other Entries</h2>
+		{if segment_2}
+		{exp:channel:entries channel="blog" sort="dsc" entry_id="not {segment_2}" dynamic="off"}
+		<a href="/Blog/{entry_id}/#pagenav">
+		<div id="blogsidebarentry">
+			<h3>{title}</h3>
+			<p>{entry_date format="%D, %F %j%S, %Y"}</p>
+		</div>
+		</a>
+		{/exp:channel:entries}
+		{if:else}
+		{exp:channel:entries channel="blog" sort="dsc" limit="5" dynamic="off" offset="1"}
+		<a href="/Blog/{entry_id}#pagenav">
+		<div id="blogsidebarentry">
+			<h3>{title}</h3>
+			<p>{entry_date format="%D, %F %j%S, %Y"}</p>
+		</div>
+		</a>
+		{/exp:channel:entries}
+		{/if}
+		
+	</div>
+
+</div><!-- BLOG CLOSE -->
+
+
+{embed="Assets/footer"}
