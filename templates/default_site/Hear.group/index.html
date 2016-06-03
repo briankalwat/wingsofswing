@@ -13,30 +13,13 @@
 
 	<div id="sidebar" class="hear">
 		<h2>Listen</h2><br/><br/>
-		<div id="playerbox">
-			<h3>Demo Mix</h3><p>Arrangement By: The Wings of Swing</p>
-			<object type="application/x-shockwave-flash" data="http://www.wingsofswing.com/uploads/songs/player.swf" id="audioplayer1" height="24" width="290"> <param name="movie" value="http://www.wingsofswing.com/uploads/songs/player.swf"> <param name="FlashVars" value="playerID=audioplayer1&soundFile=http://www.wingsofswing.com/uploads/songs/Demo.mp3"> <param name="quality" value="high"> <param name="menu" value="false"> <param name="wmode" value="transparent"> </object>
-		</div>
 
+		{exp:channel:entries channel="songs"}
 		<div id="playerbox">
-			<h3>Blue Moon</h3><p>Arrangement By: Unknown</p>
-			<object type="application/x-shockwave-flash" data="http://www.wingsofswing.com/uploads/songs/player.swf" id="audioplayer2" height="24" width="290"> <param name="movie" value="http://www.wingsofswing.com/uploads/songs/player.swf"> <param name="FlashVars" value="playerID=audioplayer2&soundFile=http://www.wingsofswing.com/uploads/songs/BlueMoon.mp3"> <param name="quality" value="high"> <param name="menu" value="false"> <param name="wmode" value="transparent"> </object>
+			<h3>{title}</h3>{if '{arrangement}' != ''}<p>Arrangement By: {arrangement}</p>{/if}
+			<object type="application/x-shockwave-flash" data="http://www.wingsofswing.com/uploads/songs/player.swf" id="audioplayer{count}" height="24" width="290"> <param name="movie" value="http://www.wingsofswing.com/uploads/songs/player.swf"> <param name="FlashVars" value="playerID=audioplayer{count}&soundFile={audio_file}"> <param name="quality" value="high"> <param name="menu" value="false"> <param name="wmode" value="transparent"> </object>
 		</div>
-				
-		<div id="playerbox">
-			<h3>How Long Has This Been Going On?</h3><p>Arrangement By: Unknown</p>
-			<object type="application/x-shockwave-flash" data="http://www.wingsofswing.com/uploads/songs/player.swf" id="audioplayer3" height="24" width="290"> <param name="movie" value="http://www.wingsofswing.com/uploads/songs/player.swf"> <param name="FlashVars" value="playerID=audioplayer3&soundFile=http://www.wingsofswing.com/uploads/songs/HowLong.mp3"> <param name="quality" value="high"> <param name="menu" value="false"> <param name="wmode" value="transparent"> </object>
-		</div>
-				
-		<div id="playerbox">
-			<h3>Meditation</h3><p>Arrangement By: Unknown</p>
-			<object type="application/x-shockwave-flash" data="http://www.wingsofswing.com/uploads/songs/player.swf" id="audioplayer4" height="24" width="290"> <param name="movie" value="http://www.wingsofswing.com/uploads/songs/player.swf"> <param name="FlashVars" value="playerID=audioplayer4&soundFile=http://www.wingsofswing.com/uploads/songs/Meditation.mp3"> <param name="quality" value="high"> <param name="menu" value="false"> <param name="wmode" value="transparent"> </object>
-		</div>
-				
-		<div id="playerbox">
-			<h3>Somewhere Over The Rainbow</h3><p>Arrangement By: Unknown</p>
-			<object type="application/x-shockwave-flash" data="http://www.wingsofswing.com/uploads/songs/player.swf" id="audioplayer5" height="24" width="290"> <param name="movie" value="http://www.wingsofswing.com/uploads/songs/player.swf"> <param name="FlashVars" value="playerID=audioplayer5&soundFile=http://www.wingsofswing.com/uploads/songs/Rainbow.mp3"> <param name="quality" value="high"> <param name="menu" value="false"> <param name="wmode" value="transparent"> </object>
-		</div>
+		{/exp:channel:entries}
 
 	</div><!-- SIDEBAR CLOSE -->
 	
